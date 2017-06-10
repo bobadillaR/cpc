@@ -37,23 +37,23 @@ class Footer extends Component {
         <Col sm={7} style={{ justifyContent: width > 773 ? 'flex-end' : 'center', display: 'flex' }}>
           {width > 773 ?
             <div>
-              <a target="_blank" href="http://www.sna.cl/" rel="noopener noreferrer" style={{ marginLeft: '2%' }}>
-                <img src={snaLogo}alt="cpc-logo" style={{ margintop: 10, height: 50, textalign: 'center' }} />
+              <a target="_blank" href="http://www.sna.cl/" rel="noopener noreferrer">
+                <img src={snaLogo} alt="cpc-logo" style={{ marginTop: 15, height: 50, textalign: 'center', marginLeft: 15 }} />
               </a>
-              <a target="_blank" href="http://www.cnc.cl/" rel="noopener noreferrer" style={{ marginLeft: '2%' }}>
-                <img src={cncLogo}alt="cpc-logo" style={{ margintop: 10, height: 50, textalign: 'center' }} />
+              <a target="_blank" href="http://www.cnc.cl/" rel="noopener noreferrer">
+                <img src={cncLogo} alt="cpc-logo" style={{ marginTop: 15, height: 50, textalign: 'center', marginLeft: 15 }} />
               </a>
-              <a target="_blank" href="http://www.sonami.cl/" rel="noopener noreferrer" style={{ marginLeft: '2%' }}>
-                <img src={sonamiLogo}alt="cpc-logo" style={{ margintop: 10, height: 50, textalign: 'center' }} />
+              <a target="_blank" href="http://www.sonami.cl/" rel="noopener noreferrer">
+                <img src={sonamiLogo} alt="cpc-logo" style={{ marginTop: 15, height: 50, textalign: 'center', marginLeft: 15 }} />
               </a>
-              <a target="_blank" href="http://www.sofofa.cl/" rel="noopener noreferrer" style={{ marginLeft: '2%' }}>
-                <img src={sofofaLogo}alt="cpc-logo" style={{ margintop: 10, height: 50, textalign: 'center' }} />
+              <a target="_blank" href="http://www.sofofa.cl/" rel="noopener noreferrer">
+                <img src={sofofaLogo} alt="cpc-logo" style={{ marginTop: 15, height: 50, textalign: 'center', marginLeft: 15 }} />
               </a>
-              <a target="_blank" href="http://www.cchc.cl/" rel="noopener noreferrer" style={{ marginLeft: '2%' }}>
-                <img src={abifLogo}alt="cpc-logo" style={{ margintop: 10, height: 50, textalign: 'center' }} />
+              <a target="_blank" href="http://www.cchc.cl/" rel="noopener noreferrer">
+                <img src={cchcLogo} alt="cpc-logo" style={{ marginTop: 15, height: 50, textalign: 'center', marginLeft: 15 }} />
               </a>
-              <a target="_blank" href="http://www.abif.cl/" rel="noopener noreferrer" style={{ marginLeft: '2%' }}>
-                <img src={cchcLogo}alt="cpc-logo" style={{ margintop: 10, height: 50, textalign: 'center' }} />
+              <a target="_blank" href="http://www.abif.cl/" rel="noopener noreferrer" >
+                <img src={abifLogo} alt="cpc-logo" style={{ marginTop: 15, height: 50, textalign: 'center', marginLeft: 15 }} />
               </a>
             </div>
             :
@@ -61,42 +61,42 @@ class Footer extends Component {
               <Col xs={4}>
                 <center>
                   <a target="_blank" href="http://www.sna.cl/" rel="noopener noreferrer">
-                    <img src={snaLogo}alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
+                    <img src={snaLogo} alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
                   </a>
                 </center>
               </Col>
               <Col xs={4}>
                 <center>
                   <a target="_blank" href="http://www.cnc.cl/" rel="noopener noreferrer">
-                    <img src={cncLogo}alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
+                    <img src={cncLogo} alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
                   </a>
                 </center>
               </Col>
               <Col xs={4}>
                 <center>
                   <a target="_blank" href="http://www.sonami.cl/" rel="noopener noreferrer">
-                    <img src={sonamiLogo}alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
+                    <img src={sonamiLogo} alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
                   </a>
                 </center>
               </Col>
               <Col xs={4}>
                 <center>
                   <a target="_blank" href="http://www.sofofa.cl/" rel="noopener noreferrer">
-                    <img src={sofofaLogo}alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
+                    <img src={sofofaLogo} alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
                   </a>
                 </center>
               </Col>
               <Col xs={4}>
                 <center>
                   <a target="_blank" href="http://www.cchc.cl/" rel="noopener noreferrer">
-                    <img src={abifLogo}alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
+                    <img src={abifLogo} alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
                   </a>
                 </center>
               </Col>
               <Col xs={4}>
                 <center>
                   <a target="_blank" href="http://www.abif.cl/" rel="noopener noreferrer">
-                    <img src={cchcLogo}alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
+                    <img src={cchcLogo} alt="cpc-logo" style={{ margintop: 10, height: 30, marginBottom: 10 }} />
                   </a>
                 </center>
               </Col>

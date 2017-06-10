@@ -16,7 +16,7 @@ class NavBar extends Component {
   render() {
     const { width } = this.props;
     return (
-      <Navbar collapseOnSelect fluid style={{ borderWidth: 0 }}>
+      <Navbar collapseOnSelect fluid fixedTop>
         <Col md={10} mdOffset={1} >
           <Navbar.Header>
             <a href="/">
@@ -29,7 +29,7 @@ class NavBar extends Component {
               <LinkContainer to="/plataforma">
                 <NavItem>Liceos de Educación Técnica Profesional (ETP)</NavItem>
               </LinkContainer>
-              <NavDropdown title="Iniciaticas del sector Privado" id="basic-nav-dropdown">
+              <NavDropdown title="Iniciativas del Sector Privado" id="basic-nav-dropdown">
                 <MenuItem>Formando Chilenos</MenuItem>
                 <MenuItem>Fortaleciendo la Formación Técnica</MenuItem>
                 <MenuItem>Capacitar con calidad</MenuItem>
