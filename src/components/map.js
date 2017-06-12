@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 import Navbar from './mapComponents/navbar';
+import TableView from './mapComponents/tableview';
 import mapStyle from './mapComponents/mapStyle.json';
 
 export default class Map extends Component {
@@ -27,6 +28,7 @@ export default class Map extends Component {
           options={{ styles: mapStyle }}
         />
         <Navbar />
+        <TableView />
       </div>
     );
   }
