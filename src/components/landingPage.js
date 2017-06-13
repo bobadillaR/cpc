@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button } from 'react-bootstrap';
+import { Col, Button, Collapse, Image } from 'react-bootstrap';
 import FaPlay from 'react-icons/lib/fa/play';
 
 import backgroundImage from './media/fondosearch.0ae018b2.png';
@@ -13,6 +13,8 @@ export default class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      open: false,
+      openDer: false,
     };
   }
 
@@ -25,8 +27,13 @@ export default class LandingPage extends Component {
           <Col md={3} style={{ paddingTop: '5%' }}>
             <center>
               <img src={imgDer} style={{ height: 130 }} alt="der" />
-              <h4 style={{ margintop: 10, minheight: 30, color: 'rgb(250, 250, 251)' }}>Liceos de Educación Técnica Profesional (ETP)</h4>
-              <img src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" />
+              <h4 style={{ marginTop: 10, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Liceos de Educación Técnica Profesional (ETP)</h4>
+              <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ open: !this.state.open })} />
+              <Collapse in={this.state.open}>
+                <div style={{ marginTop: 5, color: 'rgb(234, 232, 230)', fontStyle: 'italic', lineHeight: 1, fontWeight: 100 }}>
+                  En esta sección encontrarás un mapa con Liceos de Educación Técnica Profesional asociados a la CPC a lo largo del país y sus principales características.
+                </div>
+              </Collapse>
               <Button bsStyle="link" style={{ marginTop: 10 }} >
                 <FaPlay />Ver el VideoTutorial
               </Button>
@@ -37,11 +44,16 @@ export default class LandingPage extends Component {
               <img src={imgBigLogo} style={{ height: height * 0.5, marginLeft: '10%' }} alt="der" />
             </center>
           </Col>
-          <Col md={3} style={{ paddingTop: '5%' }}>
+          <Col md={3} style={{ paddingTop: '5%', padding: '0 !important' }}>
             <center>
               <img src={imgIzq} style={{ height: 130 }} alt="der" />
-              <h4 style={{ margintop: 10, minheight: 30, color: 'rgb(250, 250, 251)' }}>Liceos de Educación Técnica Profesional (ETP)</h4>
-              <img src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" />
+              <h4 style={{ marginTop: 10, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Iniciativas del Sector Privado</h4>
+              <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ openDer: !this.state.openDer })} />
+              <Collapse in={this.state.openDer}>
+                <div style={{ marginTop: 5, color: 'rgb(234, 232, 230)', fontStyle: 'italic', lineHeight: 1, fontWeight: 100 }}>
+                  En esta sección encontrarás información sobre iniciativas que se desarrollan desde el sector privado para mejorar la formación de capital humano.
+                </div>
+              </Collapse>
             </center>
           </Col>
         </Col>
