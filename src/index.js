@@ -16,7 +16,7 @@ export default class App extends Component {
     this.state = {
       height: window.innerHeight,
       width: window.innerWidth,
-      modal1: true,
+      modal1: false,
     };
   }
 
@@ -29,11 +29,11 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar {...this.state} onLogout={() => this.logout()} />
+          <Navbar {...this.state} modalClick={() => this.setState({ modal1: !modal1 })} />
           <Route exact path="/" render={props => <LandingPage {...this.state} {...props} />} />
           <Route path="/plataforma" render={props => <Map {...this.state} {...props} />} />
           <Footer {...this.state} />
-          <ModalExample show={modal1} />
+          <ModalExample show={modal1} modalClick={() => this.setState({ modal1: !modal1 })} />
         </div>
       </Router>
     );

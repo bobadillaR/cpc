@@ -30,7 +30,7 @@ class NavBar extends Component {
                 <NavItem>Liceos de Educación Técnica Profesional (ETP)</NavItem>
               </LinkContainer>
               <NavDropdown title="Iniciativas del Sector Privado" id="basic-nav-dropdown">
-                <MenuItem>Formando Chilenos</MenuItem>
+                <MenuItem onClick={this.props.modalClick}>Formando Chilenos</MenuItem>
                 <MenuItem>Fortaleciendo la Formación Técnica</MenuItem>
                 <MenuItem>Capacitar con calidad</MenuItem>
                 <MenuItem>Experiencias Sectoriales</MenuItem>

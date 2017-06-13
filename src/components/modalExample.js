@@ -12,10 +12,10 @@ export default class ModalExample extends Component {
 
 
   render() {
-    const { validator } = this.state;
+    const { show } = this.props;
     return (
-      <Modal show={validator}>
-        <Modal.Header closeButton={() => this.setState({ validator: !validator })}>
+      <Modal show={show} onHide={this.props.modalClick} bsSize="lg" >
+        <Modal.Header closeButton>
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
 
