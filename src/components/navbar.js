@@ -33,7 +33,6 @@ class NavBar extends Component {
                 <MenuItem>Formando Chilenos</MenuItem>
                 <MenuItem>Fortaleciendo la Formación Técnica</MenuItem>
                 <MenuItem>Capacitar con calidad</MenuItem>
-                <MenuItem divider />
                 <MenuItem>Experiencias Sectoriales</MenuItem>
               </NavDropdown>
             </Nav>

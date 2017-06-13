@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
+import registerServiceWorker from './registerServiceWorker';
 import Footer from './components/footer';
 import LandingPage from './components/landingPage';
 import Map from './components/map';
 import Navbar from './components/navbar';
+import ModalExample from './components/modalExample';
 
 export default class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export default class App extends Component {
     this.state = {
       height: window.innerHeight,
       width: window.innerWidth,
+      modal1: true,
     };
   }
 
@@ -23,6 +25,7 @@ export default class App extends Component {
   }
 
   render() {
+    const { modal1 } = this.state;
     return (
       <Router>
         <div>
@@ -30,6 +33,7 @@ export default class App extends Component {
           <Route exact path="/" render={props => <LandingPage {...this.state} {...props} />} />
           <Route path="/plataforma" render={props => <Map {...this.state} {...props} />} />
           <Footer {...this.state} />
+          <ModalExample show={modal1} />
         </div>
       </Router>
     );
