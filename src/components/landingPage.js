@@ -22,7 +22,7 @@ export default class LandingPage extends Component {
   render() {
     const { height, width } = this.props;
     return (
-      <div style={{ background: `url(${backgroundImage}) center center no-repeat`, backgroundSize: 'cover', alignItems: 'center', display: 'flex', minHeight: height }}>
+      <div style={{ background: `url(${backgroundImage}) center center no-repeat`, backgroundSize: 'cover', alignItems: 'center', display: 'flex', minHeight: height, paddingBottom: width < 773 && 50 }}>
         <Col md={8} mdOffset={2} xs={10} xsOffset={1}>
           <Col md={3} style={{ paddingTop: width > 773 ? '5%' : 100 }}>
             <center>
