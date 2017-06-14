@@ -22,7 +22,7 @@ class Footer extends Component {
   render() {
     const { width } = this.props;
     return (
-      <div style={{ position: 'fixed', bottom: 0, backgroundColor: '#323247', width: '100%', padding: 15 }}>
+      <div style={{ position: width > 773 ? 'fixed' : 'absolute', bottom: width > 773 ? 0 : '', backgroundColor: '#323247', width: '100%', padding: 15 }}>
         <Col sm={3} smOffset={1} xs={12}>
           <a target="_blank" href="http://www.cpc.cl/" rel="noopener noreferrer" >
             {width > 773 ?

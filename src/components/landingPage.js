@@ -20,11 +20,11 @@ export default class LandingPage extends Component {
 
 
   render() {
-    const { height } = this.props;
+    const { height, width } = this.props;
     return (
       <div style={{ background: `url(${backgroundImage}) center center no-repeat`, backgroundSize: 'cover', alignItems: 'center', display: 'flex', minHeight: height }}>
         <Col md={8} mdOffset={2} xs={10} xsOffset={1}>
-          <Col md={3} style={{ paddingTop: '5%' }}>
+          <Col md={3} style={{ paddingTop: width > 773 ? '5%' : 100 }}>
             <center>
               <img src={imgDer} style={{ height: 130 }} alt="der" />
               <h4 style={{ marginTop: 10, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Liceos de Educación Técnica Profesional (ETP)</h4>
