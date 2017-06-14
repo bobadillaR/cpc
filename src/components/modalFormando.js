@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Col, Row, Image } from 'react-bootstrap';
+import { Modal, Col, Row, Image, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import roles from './media/roles.57e04173.png';
 import estudios from './media/estudios.0a1a62e4.png';
 import marcos from './media/marcos.e7dc0f36.png';
@@ -23,6 +23,9 @@ export default class ModalFormando extends Component {
 
   render() {
     const { show } = this.props;
+    const tooltip = (
+      <Tooltip id="tooltip"><strong>En proceso...</strong></Tooltip>
+    );
     return (
       <Modal show={show} onHide={this.props.modalClick} bsSize="lg" >
         <Modal.Header closeButton style={{ paddingLeft: 20, paddingRight: 20 }}>
@@ -42,11 +45,11 @@ export default class ModalFormando extends Component {
             <Col xs={6} md={3}>
               <Image src={roles} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>ROL DE LOS SECTORES PRODUCTIVOS</p>
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Informe Final</a></p>
+              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Informe Final</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <p><a role="link" tabIndex={0} onClick={() => window.open(resumen)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Presentación Resumen</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Infografía resultados informe</a></p>
+              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Infografía resultados informe</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
@@ -56,11 +59,11 @@ export default class ModalFormando extends Component {
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <p><a target="blank" href="http://www.corma.cl/_file/material/estudio-fuerza-laboral-de-la-industria-forestal-chilena-2015-2030_-diagnostico-y-recomendaciones.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Forestal</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Acuícola</a></p>
+              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Acuícola</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Vitivinícola</a></p>
+              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Vitivinícola</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Comercio</a></p>
+              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Comercio</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
@@ -82,44 +85,44 @@ export default class ModalFormando extends Component {
             <Col xs={6} md={3}>
               <Image src={perfiles} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>PERFILES LABORALES</p>
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Buscador de Perfiles ChileValora</a></p>
+              <p><a target="blank" href="http://www.chilevalora.cl/buscador/index.php/PerfilCompetencia/index" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Buscador de Perfiles ChileValora</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Forestal</a></p>
+              <p style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', fontSize: 14 }}>Sector Forestal</p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <div style={{ height: 150, overflowY: 'scroll' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline' }}>
                   <p style={{ marginLeft: 15, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)' }}>1.</p>
                   <div>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14, fontWeight: 'bold' }}>Subsector Bosques</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Aplicador de Herbicida</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Jefe de Faena Silvícola</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operario Silvícola</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Brigadista</a></p>
+                    <p style={{ marginBottom: 0, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', fontSize: 14, fontWeight: 'bold' }}>Subsector Bosques</p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_APLICADOR_DE_HERBICIDAS.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Aplicador de Herbicida</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_JEFE_DE_FAENA_SILVICOLA.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Jefe de Faena Silvícola</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_OPERARIO_SILVICOLA.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operario Silvícola</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_BRIGADISTA.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Brigadista</a></p>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'baseline' }}>
                   <p style={{ marginLeft: 15, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)' }}>2.</p>
                   <div>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14, fontWeight: 'bold' }}>Subsector Producción Forestal</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Controlador de la Producción</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Motosierrista</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operador de Maquinaria de Caminos</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Conductor Forestal</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Estrobero</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operador de Maquinaria Forestal</a></p>
+                    <p style={{ marginBottom: 0, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', fontSize: 14, fontWeight: 'bold' }}>Subsector Producción Forestal</p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_CONTROLADOR_DE_LA_PRODUCCION.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Controlador de la Producción</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_MOTOSIERRISTA.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Motosierrista</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_OPERADOR_DE_MAQUINARIA_CAMINOS.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operador de Maquinaria de Caminos</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_CONDUCTOR_FORESTAL.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Conductor Forestal</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_ESTROBERO.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Estrobero</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areabosque/Perfil_ocupacional_OPERADOR_DE_MAQUINARIA_FORESTAL.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operador de Maquinaria Forestal</a></p>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'baseline' }}>
                   <p style={{ marginLeft: 15, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)' }}>3.</p>
                   <div>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14, fontWeight: 'bold' }}>Subsector Mantención Industrial</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Calderero</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Eléctrico</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Electrocontrol</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Mecánico</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operador de Maquinaria Rodante en Industria Maderera</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Supervisor Electrocontrol</a></p>
-                    <p style={{ marginBottom: 0 }}><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Supervisor Mecánico</a></p>
+                    <p style={{ marginBottom: 0, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', fontSize: 14, fontWeight: 'bold' }}>Subsector Mantención Industrial</p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Maestro_Calderero.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Calderero</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Maestro_Electrico.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Eléctrico</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Maestro_Electrocontrol.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Electrocontrol</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Maestro_Mecanico.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Maestro Mecánico</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Operador_de_Maquinaria_de_Aserrio.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Operador de Maquinaria Rodante en Industria Maderera</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Supervisor_Electrocontrol.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Supervisor Electrocontrol</a></p>
+                    <p style={{ marginBottom: 0 }}><a target="blank" href="http://competenciaslaboralescorma.cl/documentos_SG/perfiles/areaindustria/Perfil_ocupacional_Supervisor_Mecanico.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Supervisor Mecánico</a></p>
                   </div>
                 </div>
               </div>
