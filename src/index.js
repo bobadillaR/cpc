@@ -8,7 +8,7 @@ import Footer from './components/footer';
 import LandingPage from './components/landingPage';
 import Map from './components/map';
 import Navbar from './components/navbar';
-import ModalExample from './components/modalExample';
+import ModalFormando from './components/modalFormando';
 
 export default class App extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class App extends Component {
           <Route exact path="/" render={props => <LandingPage {...this.state} {...props} />} />
           <Route path="/plataforma" render={props => <Map {...this.state} {...props} />} />
           <Footer {...this.state} />
-          <ModalExample show={modal1} modalClick={() => this.setState({ modal1: !modal1 })} />
+          <ModalFormando show={modal1} modalClick={() => this.setState({ modal1: !modal1 })} />
         </div>
       </Router>
     );
