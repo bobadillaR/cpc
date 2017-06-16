@@ -24,11 +24,13 @@ export default class Map extends Component {
       tasa: '',
       sector: '',
       mapData: mapDataExcel,
+      marginNe: { lat: -31.31681573858669, lng: -67.1862917765625 },
+      marginSw: { lat: -35.50608079049562, lng: -74.1186648234375 },
     };
   }
 
   filter() {
-    const { tasa, sector } = this.state;
+    const { tasa, sector, marginNe, marginSw } = this.state;
     let mapData = mapDataExcel;
     if (tasa !== null && tasa.value !== '') {
       mapData = mapData.filter((data) => {
@@ -44,6 +46,11 @@ export default class Map extends Component {
         return val;
       });
     }
+    mapData = mapData.filter((data) => {
+      if (marginSw.lat <= Number(data.latLong.split(',')[0]) && Number(data.latLong.split(',')[0]) <= marginNe.lat &&
+      marginSw.lng <= Number(data.latLong.split(',')[1]) && Number(data.latLong.split(',')[1]) <= marginNe.lng) return true;
+      else return false;
+    });
     return mapData;
   }
 
@@ -53,17 +60,26 @@ export default class Map extends Component {
     return (
       <div>
         <GoogleMapReact
-          defaultCenter={{ lat, lng }}
-          defaultZoom={zoom}
+          center={{ lat, lng }}
+          zoom={zoom}
           style={{ display: 'flex' }}
           options={{ styles: mapStyle }}
+          onChange={data => this.setState({ marginNe: data.marginBounds.ne, marginSw: data.marginBounds.sw })}
         >
           {mapData.map(data =>
-            <img key={data.id} alt="" src={types[data.tipo - 1]} style={{ height: 30, width: 30, position: 'absolute' }} lat={data.latLong.split(',')[0]} lng={data.latLong.split(',')[1]} />,
+            (<img
+              key={data.id}
+              alt=""
+              src={types[data.tipo - 1]}
+              style={{ height: 30, width: 30, position: 'absolute' }}
+              lat={data.latLong.split(',')[0]}
+              lng={data.latLong.split(',')[1]}
+              className="button hvr-float"
+            />),
         )}
         </GoogleMapReact>
         <Navbar changeSector={sectorValue => this.setState({ sector: sectorValue })} changeTasa={tasaValue => this.setState({ tasa: tasaValue })} sector={sector} tasa={tasa} />
-        <TableView />
+        <TableView mapData={mapData} />
       </div>
     );
   }
