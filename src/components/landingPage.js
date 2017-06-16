@@ -39,7 +39,7 @@ export default class LandingPage extends Component {
               </Button>
             </center>
           </Col>
-          <Col md={6}>
+          <Col md={6} className="animate slideInDown">
             <center>
               <img src={imgBigLogo} style={{ height: height * 0.5, marginLeft: '10%' }} alt="der" />
             </center>
