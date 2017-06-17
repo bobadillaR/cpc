@@ -18,7 +18,6 @@ class Footer extends Component {
     };
   }
 
-
   render() {
     const { width } = this.props;
     return (
