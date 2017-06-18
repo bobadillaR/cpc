@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import { Image } from 'react-bootstrap';
 
 import Navbar from './mapComponents/navbar';
+import Modal from './mapComponents/modal';
 import TableView from './mapComponents/tableview';
 import mapStyle from './mapComponents/mapStyle.json';
 import mapDataExcel from './mapComponents/mapData.json';
@@ -26,6 +28,7 @@ export default class Map extends Component {
       mapData: mapDataExcel,
       marginNe: { lat: -31.31681573858669, lng: -67.1862917765625 },
       marginSw: { lat: -35.50608079049562, lng: -74.1186648234375 },
+      activeModal: -1,
     };
   }
 
@@ -55,7 +58,7 @@ export default class Map extends Component {
   }
 
   render() {
-    const { lat, lng, zoom, types, sector, tasa } = this.state;
+    const { lat, lng, zoom, types, sector, tasa, activeModal } = this.state;
     const mapData = this.filter();
     return (
       <div>
@@ -66,20 +69,22 @@ export default class Map extends Component {
           options={{ styles: mapStyle }}
           onChange={data => this.setState({ marginNe: data.marginBounds.ne, marginSw: data.marginBounds.sw })}
         >
-          {mapData.map(data =>
-            (<img
+          {mapData.map((data, key) =>
+            (<Image
               key={data.id}
               alt=""
+              onClick={() => this.setState({ activeModal: key })}
               src={types[data.tipo - 1]}
-              style={{ height: 30, width: 30, position: 'absolute' }}
+              style={{ cursor: 'pointer', height: 30, width: 30, position: 'absolute', top: -15, left: -15 }}
               lat={data.latLong.split(',')[0]}
               lng={data.latLong.split(',')[1]}
               className="button hvr-float"
             />),
         )}
         </GoogleMapReact>
+        {activeModal !== -1 && <Modal data={mapData[activeModal]} modalClick={() => this.setState({ activeModal: -1 })} />}
         <Navbar changeSector={sectorValue => this.setState({ sector: sectorValue })} changeTasa={tasaValue => this.setState({ tasa: tasaValue })} sector={sector} tasa={tasa} />
-        <TableView mapData={mapData} />
+        <TableView mapData={mapData} onClick={key => this.setState({ activeModal: key })} />
       </div>
     );
   }

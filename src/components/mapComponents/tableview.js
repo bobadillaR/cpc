@@ -29,9 +29,10 @@ export default class TableView extends Component {
           {mapData.length > 0 ?
             mapData.map((element, key) =>
               (<div
-                style={{ display: 'flex', alignItems: 'center', textAlign: 'center', backgroundColor: hover === key ? color[2] : color[key % 2], margin: 0, height: 110 }}
+                style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', textAlign: 'center', backgroundColor: hover === key ? color[2] : color[key % 2], margin: 0, height: 110 }}
                 onMouseOver={() => this.setState({ hover: key })}
                 onMouseLeave={() => this.setState({ hover: -1 })}
+                onClick={() => this.props.onClick(key)}
               >
                 <Col xs={2}>
                   <img key={element.id} alt="" src={types[element.tipo - 1]} style={{ height: 30 }} />
