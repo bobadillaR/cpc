@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
-import { Modal, Col } from 'react-bootstrap';
+import { Modal, Col, Image } from 'react-bootstrap';
+import imgTitulacion from '../media/iconTitulacion.png';
+import imgSeparator from '../media/separatorModal.png';
+import imgSimce from '../media/botonsimce.c7dc04ec.png';
+import imgVinculo from '../media/vinculos.6f639643.png';
+import imgConsejo from '../media/consejo.52ae89f3.png';
+import imgConsejoHover from '../media/consejoHover.0cffe2e7.png';
+import imgVinculoHover from '../media/vinculosHover.10d83ecf.png';
 
 export default class Template extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      hoverVinculo: false,
+      hoverConsejo: false,
     };
   }
 
 
   render() {
     const { data } = this.props;
+    const { hoverConsejo, hoverVinculo } = this.state;
     console.log(data);
     return (
       <Modal show onHide={this.props.modalClick} bsSize="lg" >
@@ -20,20 +30,34 @@ export default class Template extends Component {
             <h4>{data.nombre.toUpperCase()}</h4>
             <p style={{ fontStyle: 'italic', fontSize: 14, padding: '5px 10px 5px 5px', marginBottom: 0 }}>{data.direccion}, {data.comuna}</p>
           </Modal.Title>
-          <Modal.Body>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Col md={3} style={{ paddingLeft: 20, paddingRight: 0 }}>
-              <p style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 0, textAlign: 'center', color: 'rgb(98, 97, 131)', justifyContent: 'center' }}>
-                Tasa de Titulación 2016
-              </p>
-            </Col>
-            <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
-              
-            </div>
-          </Modal.Footer>
         </Modal.Header>
+        <Modal.Body>
+        </Modal.Body>
+        <Image src={imgSeparator} responsive />
+        <Modal.Footer>
+          <Col md={3} style={{ paddingLeft: 20, paddingRight: 0 }}>
+            <p style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 0, textAlign: 'center', color: 'rgb(98, 97, 131)', justifyContent: 'center' }}>
+              Tasa de Titulación 2016
+            </p>
+            <div alt="dada" style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
+              <img src={imgTitulacion} style={{ height: 45 }} />
+              <p style={{ fontSize: 36, color: 'rgb(98, 97, 131)', marginLeft: 5 }} >
+                {data.tasaTitulacion}
+              </p>
+            </div>
+          </Col>
+          <Col md={9} >
+            <Col md={4} >
+              <img src={imgSimce} height={85} alt="dada" />
+            </Col>
+            <Col md={4} >
+              <img src={!hoverVinculo ? imgVinculo : imgVinculoHover} onMouseEnter={() => this.setState({ hoverVinculo: true })} onMouseLeave={() => this.setState({ hoverVinculo: false })} height={85} alt="dada" />
+            </Col>
+            <Col md={4} >
+              <img src={!hoverConsejo ? imgConsejo : imgConsejoHover} onMouseEnter={() => this.setState({ hoverConsejo: true })} onMouseLeave={() => this.setState({ hoverConsejo: false })} height={85} alt="dada" />
+            </Col>
+          </Col>
+        </Modal.Footer>
       </Modal>
     );
   }
