@@ -40,7 +40,7 @@ export default class LandingPage extends Component {
                   En esta sección encontrarás un mapa con Liceos de Educación Técnica Profesional asociados a la CPC a lo largo del país y sus principales características.
                 </div>
               </Collapse>
-              <Button bsStyle="link" style={{ marginTop: 10 }} >
+              <Button onClick={this.props.modalClick5} bsStyle="link" style={{ marginTop: 10 }} >
                 <FaPlay />Ver el VideoTutorial
               </Button>
             </center>}

@@ -38,7 +38,7 @@ class NavBar extends Component {
             </Nav>
             <Nav pullRight>
               {width > 766 && <span style={{ borderLeftColor: '#EEEEEE', borderLeftStyle: 'solid', borderLeftWidth: 1, height: '70%', position: 'absolute', top: '15%' }} />}
-              <NavItem>Tutorial</NavItem>
+              <NavItem onClick={this.props.modalClick5}>Tutorial</NavItem>
             </Nav>
           </Navbar.Collapse>
         </Col>
