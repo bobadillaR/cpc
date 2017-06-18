@@ -33,7 +33,7 @@ class NavBar extends Component {
                 <MenuItem onClick={this.props.modalClick1}>Formando Chilenos</MenuItem>
                 <MenuItem onClick={this.props.modalClick2}>Fortaleciendo la Formación Técnica</MenuItem>
                 <MenuItem onClick={this.props.modalClick3}>Capacitar con calidad</MenuItem>
-                <MenuItem>Experiencias Sectoriales</MenuItem>
+                <MenuItem onClick={this.props.modalClick4}>Experiencias Sectoriales</MenuItem>
               </NavDropdown>
             </Nav>
             <Nav pullRight>
