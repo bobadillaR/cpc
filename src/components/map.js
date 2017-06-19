@@ -13,6 +13,7 @@ import icon3 from './media/1especialidad.png';
 import icon4 from './media/4especialidades.png';
 import icon5 from './media/5especialidades.png';
 import icon6 from './media/6especialidades.png';
+import iconPin from './media/pin.png';
 
 export default class Map extends Component {
 
@@ -29,6 +30,7 @@ export default class Map extends Component {
       marginNe: { lat: -31.31681573858669, lng: -67.1862917765625 },
       marginSw: { lat: -35.50608079049562, lng: -74.1186648234375 },
       activeModal: -1,
+      searched: false,
     };
   }
 
@@ -58,7 +60,7 @@ export default class Map extends Component {
   }
 
   render() {
-    const { lat, lng, zoom, types, sector, tasa, activeModal } = this.state;
+    const { lat, lng, zoom, types, sector, tasa, activeModal, searched } = this.state;
     const mapData = this.filter();
     return (
       <div>
@@ -78,12 +80,34 @@ export default class Map extends Component {
               style={{ cursor: 'pointer', height: 30, width: 30, position: 'absolute', top: -15, left: -15 }}
               lat={data.latLong.split(',')[0]}
               lng={data.latLong.split(',')[1]}
-              className="button hvr-float"
             />),
-        )}
+          )}
+          {searched &&
+            <Image
+              src={iconPin}
+              alt=""
+              style={{ cursor: 'pointer', height: 30, position: 'absolute', top: -15, left: -15 }}
+              lat={searched.lat}
+              lng={searched.lng}
+            />
+          }
         </GoogleMapReact>
         {activeModal !== -1 && <Modal data={mapData[activeModal]} modalClick={() => this.setState({ activeModal: -1 })} />}
-        <Navbar searchbox={result => console.log(result)} changeSector={sectorValue => this.setState({ sector: sectorValue })} changeTasa={tasaValue => this.setState({ tasa: tasaValue })} sector={sector} tasa={tasa} />
+        <Navbar
+          searchbox={result => this.setState({
+            searched: {
+              lat: result[0].geometry.location.lat(),
+              lng: result[0].geometry.location.lng(),
+            },
+            lat: result[0].geometry.location.lat(),
+            lng: result[0].geometry.location.lng(),
+            zoom: 13,
+          })}
+          changeSector={sectorValue => this.setState({ sector: sectorValue })}
+          changeTasa={tasaValue => this.setState({ tasa: tasaValue })}
+          sector={sector}
+          tasa={tasa}
+        />
         <TableView {...this.props} mapData={mapData} onClick={key => this.setState({ activeModal: key })} />
       </div>
     );

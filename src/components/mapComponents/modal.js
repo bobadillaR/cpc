@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Col, Image } from 'react-bootstrap';
+import { Modal, Col, Image, OverlayTrigger, Popover } from 'react-bootstrap';
 import imgTitulacion from '../media/iconTitulacion.png';
 import imgSeparator from '../media/separatorModal.png';
 import imgSimce from '../media/botonsimce.c7dc04ec.png';
@@ -18,11 +18,17 @@ export default class Template extends Component {
     };
   }
 
-
   render() {
     const { data } = this.props;
     const { hoverConsejo, hoverVinculo } = this.state;
     console.log(data);
+    const popoverHoverFocus = (
+      <Popover id="popover-trigger-click-root-close" title="RESULTADOS 2015">
+        <p>Matemáticas: {data.simceMatematicas}</p>
+        <p>Lenguaje: {data.simceLenguaje}</p>
+        <p>Historia: {data.simceHistoria}</p>
+      </Popover>
+    );
     return (
       <Modal show onHide={this.props.modalClick} bsSize="lg" >
         <Modal.Header closeButton style={{ paddingLeft: 20, paddingRight: 20 }}>
@@ -39,8 +45,8 @@ export default class Template extends Component {
             <p style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 0, textAlign: 'center', color: 'rgb(98, 97, 131)', justifyContent: 'center' }}>
               Tasa de Titulación 2016
             </p>
-            <div alt="dada" style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
-              <img src={imgTitulacion} style={{ height: 45 }} />
+            <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
+              <img alt="dada" src={imgTitulacion} style={{ height: 45 }} />
               <p style={{ fontSize: 36, color: 'rgb(98, 97, 131)', marginLeft: 5 }} >
                 {data.tasaTitulacion}
               </p>
@@ -48,13 +54,15 @@ export default class Template extends Component {
           </Col>
           <Col md={9} >
             <Col md={4} >
-              <img src={imgSimce} height={85} alt="dada" />
+              <OverlayTrigger trigger={['hover', 'focus']} placement="top" overlay={popoverHoverFocus}>
+                <img src={imgSimce} height={85} alt="dada" />
+              </OverlayTrigger>
             </Col>
             <Col md={4} >
-              <img src={!hoverVinculo ? imgVinculo : imgVinculoHover} onMouseEnter={() => this.setState({ hoverVinculo: true })} onMouseLeave={() => this.setState({ hoverVinculo: false })} height={85} alt="dada" />
+              <img src={!hoverVinculo ? imgVinculo : imgVinculoHover} onMouseEnter={() => this.setState({ hoverVinculo: true })} onMouseLeave={() => this.setState({ hoverVinculo: false })} height={85} alt="dada" style={{ cursor: 'pointer' }} />
             </Col>
             <Col md={4} >
-              <img src={!hoverConsejo ? imgConsejo : imgConsejoHover} onMouseEnter={() => this.setState({ hoverConsejo: true })} onMouseLeave={() => this.setState({ hoverConsejo: false })} height={85} alt="dada" />
+              <img src={!hoverConsejo ? imgConsejo : imgConsejoHover} onMouseEnter={() => this.setState({ hoverConsejo: true })} onMouseLeave={() => this.setState({ hoverConsejo: false })} height={85} alt="dada" style={{ cursor: 'pointer' }} />
             </Col>
           </Col>
         </Modal.Footer>
