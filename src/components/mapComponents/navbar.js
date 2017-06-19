@@ -6,6 +6,7 @@ import './select.css';
 import imgSector from '../media/sectoreconomico.65cf16a0.png';
 import imgTasa from '../media/tasaempleabilidad.75817b54.png';
 import imgSearch from '../media/direccion.1eb1146f.png';
+import SearchBox from './searchBox';
 
 export default class Navbar extends Component {
 
@@ -36,7 +37,6 @@ export default class Navbar extends Component {
     };
   }
 
-
   render() {
     const { sectorLabeL, tasaLabel } = this.state;
     const { sector, tasa } = this.props;
@@ -61,7 +61,7 @@ export default class Navbar extends Component {
           </Col>
           <Col md={4}>
             <Col xs={10}>
-              <Select placeholder="Lugar o Nombre de Liceo" />
+              <SearchBox placeholder="Provincia, Ciudad, Region o nombre de liceo" onPlacesChanged={this.props.searchbox} />
             </Col>
             <Col xs={2}>
               <img src={imgSearch} style={{ height: 32, margintop: 5 }} alt="lala" />

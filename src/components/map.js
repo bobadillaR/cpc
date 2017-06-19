@@ -83,8 +83,8 @@ export default class Map extends Component {
         )}
         </GoogleMapReact>
         {activeModal !== -1 && <Modal data={mapData[activeModal]} modalClick={() => this.setState({ activeModal: -1 })} />}
-        <Navbar changeSector={sectorValue => this.setState({ sector: sectorValue })} changeTasa={tasaValue => this.setState({ tasa: tasaValue })} sector={sector} tasa={tasa} />
-        <TableView mapData={mapData} onClick={key => this.setState({ activeModal: key })} />
+        <Navbar searchbox={result => console.log(result)} changeSector={sectorValue => this.setState({ sector: sectorValue })} changeTasa={tasaValue => this.setState({ tasa: tasaValue })} sector={sector} tasa={tasa} />
+        <TableView {...this.props} mapData={mapData} onClick={key => this.setState({ activeModal: key })} />
       </div>
     );
   }
