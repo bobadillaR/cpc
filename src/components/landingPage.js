@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Button, Collapse, Image } from 'react-bootstrap';
 import FaPlay from 'react-icons/lib/fa/play';
+import { Link } from 'react-router-dom';
 
 import backgroundImage from './media/fondosearch.0ae018b2.png';
 import imgDer from './media/botonIzquierdaMain.a4afd408.png';
@@ -32,7 +33,9 @@ export default class LandingPage extends Component {
         <Col md={8} mdOffset={2} xs={10} xsOffset={1}>
           <Col md={3} style={{ paddingTop: width > 773 ? '5%' : 100 }} >
             {activeTrans && <center className={'animated slideInRight'}>
-              <img src={imgDer} style={{ height: 130 }} alt="der" />
+              <Link to="/plataforma">
+                <img src={imgDer} style={{ height: 130 }} alt="der" />
+              </Link>
               <h4 style={{ marginTop: 10, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Liceos de Educación Técnica Profesional (ETP)</h4>
               <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ open: !this.state.open })} />
               <Collapse in={this.state.open}>
