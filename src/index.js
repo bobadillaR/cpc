@@ -38,7 +38,7 @@ export default class App extends Component {
       <Router>
         <div>
           <Navbar {...this.state} modalClick1={() => this.setState({ modal1: !modal1 })} modalClick2={() => this.setState({ modal2: !modal2 })} modalClick3={() => this.setState({ modal3: !modal3 })} modalClick4={() => this.setState({ modal4: !modal4 })} modalClick5={() => this.setState({ modal5: !modal5 })} />
-          <Route exact path="/" render={props => <LandingPage {...this.state} {...props} modalClick5={() => this.setState({ modal5: !modal5 })} />} />
+          <Route exact path="/" render={props => <LandingPage {...this.state} {...props} modalClick1={() => this.setState({ modal1: !modal1 })} modalClick2={() => this.setState({ modal2: !modal2 })} modalClick3={() => this.setState({ modal3: !modal3 })} modalClick4={() => this.setState({ modal4: !modal4 })} modalClick5={() => this.setState({ modal5: !modal5 })} />} />
           <Route path="/plataforma" render={props => <Map {...this.state} {...props} />} />
           <Footer {...this.state} />
           <ModalFormando show={modal1} modalClick={() => this.setState({ modal1: !modal1 })} />

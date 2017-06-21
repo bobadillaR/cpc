@@ -8,6 +8,11 @@ import imgDer from './media/botonIzquierdaMain.a4afd408.png';
 import imgIzq from './media/botonDerechaMain.32fce24d.png';
 import imgInfo from './media/+info.png';
 import imgBigLogo from './media/logoPrincipal.8420ae09.png';
+import maletin from './media/maletin.png';
+import handshake from './media/handshake.png';
+import ticket from './media/ticket.png';
+import video from './media/video.png';
+
 
 export default class LandingPage extends Component {
 
@@ -17,6 +22,7 @@ export default class LandingPage extends Component {
       open: false,
       openDer: false,
       activeTrans: false,
+      hover: false,
     };
   }
 
@@ -26,7 +32,7 @@ export default class LandingPage extends Component {
 
   render() {
     const { height, width } = this.props;
-    const { activeTrans } = this.state;
+    const { activeTrans, hover } = this.state;
     console.log(activeTrans);
     return (
       <div style={{ background: `url(${backgroundImage}) center center no-repeat`, backgroundSize: 'cover', alignItems: 'center', display: 'flex', minHeight: height, paddingBottom: width < 773 && 50 }}>
@@ -54,16 +60,38 @@ export default class LandingPage extends Component {
             </center>
           </Col>
           <Col md={3} style={{ paddingTop: '5%', padding: '0 !important' }}>
-            {activeTrans && <center className={'animated slideInLeft'}>
-              <img src={imgIzq} style={{ height: 130 }} alt="der" />
-              <h4 style={{ marginTop: 10, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Iniciativas del Sector Privado</h4>
-              <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ openDer: !this.state.openDer })} />
-              <Collapse in={this.state.openDer}>
-                <div style={{ marginTop: 5, color: 'rgb(234, 232, 230)', fontStyle: 'italic', lineHeight: 1, fontWeight: 100 }}>
-                  En esta sección encontrarás información sobre iniciativas que se desarrollan desde el sector privado para mejorar la formación de capital humano.
-                </div>
-              </Collapse>
-            </center>}
+            <div>
+              {activeTrans && <center className={'animated slideInLeft'}>
+                <img src={imgIzq} style={{ height: 130 }} alt="der" onMouseEnter={() => this.setState({ hover: true })} />
+                {hover &&
+                  <div className={'animated fadeInLeftSmall'} style={{ bottom: '37%', paddingLeft: 20, zIndex: 50, left: '55%', position: 'absolute', textAlign: 'left', display: 'inline-block' }}>
+                    <div role="link" tabIndex={0} onClick={this.props.modalClick1} style={{ position: 'relative', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                      <Image src={maletin} />
+                      <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Formando Chilenos</p>
+                    </div>
+                    <div role="link" tabIndex={0} onClick={this.props.modalClick2} style={{ position: 'relative', left: 30, top: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                      <Image src={handshake} />
+                      <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Fortaleciendo la formación técnica</p>
+                    </div>
+                    <div role="link" tabIndex={0} onClick={this.props.modalClick3} style={{ position: 'relative', left: 30, top: 3, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                      <Image src={ticket} />
+                      <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Capacitar con calidad</p>
+                    </div>
+                    <div role="link" tabIndex={0} onClick={this.props.modalClick4} style={{ position: 'relative', left: 0, top: 1, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                      <Image src={video} />
+                      <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Experencias Sectoriales</p>
+                    </div>
+                  </div>
+                }
+                <h4 style={{ marginTop: 20, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Iniciativas del Sector Privado</h4>
+                <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ openDer: !this.state.openDer })} />
+                <Collapse in={this.state.openDer}>
+                  <div style={{ marginTop: 5, color: 'rgb(234, 232, 230)', fontStyle: 'italic', lineHeight: 1, fontWeight: 100 }}>
+                    En esta sección encontrarás información sobre iniciativas que se desarrollan desde el sector privado para mejorar la formación de capital humano.
+                  </div>
+                </Collapse>
+              </center>}
+            </div>
           </Col>
         </Col>
       </div>
