@@ -61,13 +61,14 @@ export default class Map extends Component {
 
   render() {
     const { lat, lng, zoom, types, sector, tasa, activeModal, searched } = this.state;
+    const { height } = this.props;
     const mapData = this.filter();
     return (
       <div>
         <GoogleMapReact
           center={{ lat, lng }}
           zoom={zoom}
-          style={{ display: 'flex' }}
+          style={{ height }}
           options={{ styles: mapStyle }}
           onChange={data => this.setState({ marginNe: data.marginBounds.ne, marginSw: data.marginBounds.sw })}
         >
@@ -77,7 +78,7 @@ export default class Map extends Component {
               alt=""
               onClick={() => this.setState({ activeModal: key })}
               src={types[data.tipo - 1]}
-              style={{ cursor: 'pointer', height: 30, width: 30, position: 'absolute', top: -15, left: -15 }}
+              style={{ cursor: 'pointer', height: 30, width: 30, position: 'relative', top: -15, left: -15 }}
               lat={data.latLong.split(',')[0]}
               lng={data.latLong.split(',')[1]}
             />),

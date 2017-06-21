@@ -21,8 +21,8 @@ class Footer extends Component {
   render() {
     const { width } = this.props;
     return (
-      <div style={{ position: width > 773 ? 'fixed' : 'absolute', bottom: width > 773 ? 0 : '', backgroundColor: '#323247', width: '100%', padding: 15 }}>
-        <Col sm={3} smOffset={1} xs={12}>
+      <div style={{ position: width > 773 ? 'fixed' : 'relative', bottom: width > 773 ? 0 : '', backgroundColor: '#323247', width: '100%', padding: 15 }}>
+        <Col sm={3} smOffset={1} xs={12} style={{ marginTop: width > 773 && 15 }}>
           <a target="_blank" href="http://www.cpc.cl/" rel="noopener noreferrer" >
             {width > 773 ?
               <img src={cpcLogo} style={{ height: 80, width: 'auto' }} alt="cpc-logo" />

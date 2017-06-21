@@ -42,7 +42,7 @@ export default class Navbar extends Component {
     const { sector, tasa } = this.props;
     return (
       <div>
-        <Col className="animated fadeInDown" xs={12} md={10} mdOffset={1} style={{ marginTop: 80, backgroundColor: '#454561', paddingTop: 4, paddingBottom: 4 }}>
+        <Col className="animated fadeInDown" xs={12} md={10} mdOffset={1} style={{ position: 'fixed', top: 80, backgroundColor: '#454561', paddingTop: 4, paddingBottom: 4 }}>
           <Col md={4} mdOffset={1}>
             <Col xs={10}>
               <Select value={sector} placeholder="Sector Económico" options={sectorLabeL} multi onChange={a => this.props.changeSector(a)} />
