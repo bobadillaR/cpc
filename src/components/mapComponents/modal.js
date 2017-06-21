@@ -77,21 +77,21 @@ export default class Template extends Component {
         </Modal.Header>
         <Modal.Body style={{ marginLeft: 15, marginRight: 15, paddingTop: 5 }}>
           <Slider {...settings} ref={c => (this.slider = c)} >
-            <div>
-              <Col xs={12}>
+            <div style={{ paddingLeft: 10, paddingRight: 10 }}>
+              <Col xs={12} style={{ marginBottom: 20 }}>
                 <Col xs={12} md={6}>
                   <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
-                    <Image responsive src={data.imagenColegio} alt="" />
+                    <Image height={150} src={data.imagenColegio} alt="" />
                   </center>
                 </Col>
                 <Col xs={12} md={6}>
                   <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
-                    <Image responsive src={data.ImagenLogo} alt="" />
+                    <Image height={150} src={data.ImagenLogo} alt="" />
                   </center>
                 </Col>
               </Col>
-              <div style={{ marginTop: 20 }}>
-                <Col md={7} xs={12} style={{ borderColor: 'rgb(208, 208, 213)', borderLeftWidth: 0.5, borderLeftStyle: 'solid', borderrightwidth: 0.5, borderRightStyle: 'solid' }}>
+              <div style={{ marginTop: 50 }}>
+                <Col md={7} xs={12} style={{ borderColor: 'rgb(208, 208, 213)', borderrightwidth: 0.5, borderRightStyle: 'solid' }}>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>NÚMERO DE MATRICULADOS 2016</p>
                   <p style={{ lineHeight: 1 }}>{data.matriculados}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>SECTORES ECONÓMICOS</p>
@@ -101,7 +101,7 @@ export default class Template extends Component {
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>DEPENDENCIA</p>
                   <p style={{ lineHeight: 1 }}>{data.dependencia}</p>
                 </Col>
-                <Col md={5} xs={12} style={{ borderColor: 'rgb(208, 208, 213)', borderLeftWidth: 0.5, borderLeftStyle: 'solid', borderRightWidth: 0.5, borderRightStyle: 'solid' }} >
+                <Col md={5} xs={12} >
                   <img src={logo[data.IDGremio]} alt="" style={{ height: 35, marginLeft: 15 }} />
                   <div style={{ backgroundColor: 'rgb(237, 237, 241)', margin: '15px 10px 10px', padding: 5 }}>
                     {data.web !== '' &&
@@ -119,12 +119,12 @@ export default class Template extends Component {
               </div>
             </div>
             {data.empresas !== '' &&
-              <div>
+              <div style={{ paddingLeft: 10, paddingRight: 10 }}>
                 <p style={{ color: 'rgb(65, 81, 97)', fontStyle: 'italic', fontSize: 12 }}>
                   Las siguientes empresas apoyan a este establecimiento para  su funcionamiento. El apoyo varía según cada liceo en aspectos como prácticas
                   profesionales, programas de formación dual, charlas formativas, maquinarias y materiales, entre otros.
                 </p>
-                <div style={{ paddingLeft: 30, paddingRight: 30 }}>
+                <div>
                   <div style={{ paddingLeft: 15, marginTop: 20 }}>
                     <h4><strong>VÍNCULO EMPRESARIAL</strong></h4>
                     <hr />
