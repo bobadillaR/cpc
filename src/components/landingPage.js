@@ -33,14 +33,13 @@ export default class LandingPage extends Component {
   render() {
     const { height, width } = this.props;
     const { activeTrans, hover } = this.state;
-    console.log(activeTrans);
     return (
       <div style={{ background: `url(${backgroundImage}) center center no-repeat`, backgroundSize: 'cover', alignItems: 'center', display: 'flex', minHeight: height, paddingBottom: width < 773 && 50 }}>
         <Col md={8} mdOffset={2} xs={10} xsOffset={1}>
           <Col md={3} style={{ paddingTop: width > 773 ? '5%' : 100 }} >
             {activeTrans && <center className={'animated slideInRight'}>
               <Link to="/plataforma">
-                <img src={imgDer} style={{ height: 130 }} alt="der" />
+                <Image responsive src={imgDer} style={{ height: 130 }} alt="der" />
               </Link>
               <h4 style={{ marginTop: 10, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Liceos de Educación Técnica Profesional (ETP)</h4>
               <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ open: !this.state.open })} />
@@ -54,30 +53,30 @@ export default class LandingPage extends Component {
               </Button>
             </center>}
           </Col>
-          <Col md={activeTrans ? 6 : 12} className="animated slideInDown">
+          <Col md={6} className="animated slideInDown">
             <center>
-              <img src={imgBigLogo} style={{ height: height * 0.5, marginLeft: '10%' }} alt="der" />
+              <img src={imgBigLogo} style={{ height: height * 0.5, marginLeft: '16%' }} alt="der" />
             </center>
           </Col>
           <Col md={3} style={{ paddingTop: '5%', padding: '0 !important' }}>
             <div>
               {activeTrans && <center className={'animated slideInLeft'}>
-                <img src={imgIzq} style={{ height: 130 }} alt="der" onMouseEnter={() => this.setState({ hover: true })} />
+                <Image responsive src={imgIzq} style={{ height: 130 }} alt="der" onMouseEnter={() => this.setState({ hover: true })} />
                 {hover &&
                   <div className={'animated fadeInLeftSmall'} style={{ bottom: '37%', paddingLeft: 20, zIndex: 50, left: '55%', position: 'absolute', textAlign: 'left', display: 'inline-block' }}>
-                    <div role="link" tabIndex={0} onClick={this.props.modalClick1} style={{ position: 'relative', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                    <div role="presentation" onClick={this.props.modalClick1} style={{ position: 'relative', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
                       <Image src={maletin} />
                       <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Formando Chilenos</p>
                     </div>
-                    <div role="link" tabIndex={0} onClick={this.props.modalClick2} style={{ position: 'relative', left: 30, top: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                    <div role="presentation" onClick={this.props.modalClick2} style={{ position: 'relative', left: 30, top: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
                       <Image src={handshake} />
                       <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Fortaleciendo la formación técnica</p>
                     </div>
-                    <div role="link" tabIndex={0} onClick={this.props.modalClick3} style={{ position: 'relative', left: 30, top: 3, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                    <div role="presentation" onClick={this.props.modalClick3} style={{ position: 'relative', left: 30, top: 3, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
                       <Image src={ticket} />
                       <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Capacitar con calidad</p>
                     </div>
-                    <div role="link" tabIndex={0} onClick={this.props.modalClick4} style={{ position: 'relative', left: 0, top: 1, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
+                    <div role="presentation" onClick={this.props.modalClick4} style={{ position: 'relative', left: 0, top: 1, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
                       <Image src={video} />
                       <p style={{ marginLeft: 5, marginBottom: 0, lineHeight: 1 }}>Experencias Sectoriales</p>
                     </div>
