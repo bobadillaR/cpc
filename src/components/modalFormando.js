@@ -4,7 +4,7 @@ import roles from './media/roles.57e04173.png';
 import estudios from './media/estudios.0a1a62e4.png';
 import marcos from './media/marcos.e7dc0f36.png';
 import perfiles from './media/perfiles.33592995.png';
-import resumen from './media/Presentación resumen.fc115617.pdf';
+// import resumen from './media/Presentación resumen.fc115617.pdf';
 import introduccion from './media/1. Introducción.125a2af2.pdf';
 import extraccion from './media/2. Procesos de extracción.915b4abe.pdf';
 import procesamiento from './media/3. Procesamiento de cobre oro y plata.a464c493.pdf';
@@ -48,7 +48,7 @@ export default class ModalFormando extends Component {
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>ROL DE LOS SECTORES PRODUCTIVOS</p>
               <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Informe Final</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a role="presentation" onClick={() => window.open(resumen)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Presentación Resumen</a></p>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Resumen Ejecutivo</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Infografía resultados informe</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />

@@ -9,7 +9,7 @@ import noticias from './media/noticias.2a39182d.png';
 import empresasFormacion from './media/3.2 Empresas participantes.208eb3e7.jpg';
 import descripcion from './media/Descripción Evento.a27089b7.pdf';
 import sintesis from './media/Sintesis seminario.c9ce3b30.jpg';
-import boletin1 from './media/Boletin 1.pdf';
+import boletin1 from './media/Boletin1.pdf';
 import boletin2 from './media/Boletin 2.a53f460b.pdf';
 
 export default class ModalCapacitar extends Component {
@@ -52,12 +52,12 @@ export default class ModalCapacitar extends Component {
             <Col xs={6} md={3}>
               <Image src={seminario} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>SEMINARIO</p>
-              <p><a role="presentation" onClick={() => window.open(descripcion)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Descripción Evento</a></p>
+              <p role="presentation" onClick={() => window.open(descripcion)} ><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Descripción Evento</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <p><a role="presentation" onClick={() => window.open(sintesis)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Síntesis del Seminario</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <Link to="/images" target="_blank">
-                <p onClick={this.props.modalClick}><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
+                <p onClick={this.props.modalClick} role="presentation" ><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
               </Link>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
