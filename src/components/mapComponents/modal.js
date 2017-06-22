@@ -77,8 +77,8 @@ export default class Template extends Component {
             <div style={{ paddingLeft: 30, paddingRight: 20 }}>
               <Col xs={12} style={{ marginBottom: 20 }}>
                 <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
-                  <Image height={135} style={{ margin: 12 }} src={data.imagenColegio} alt="" />
-                  <Image height={135} style={{ margin: 12 }} src={data.ImagenLogo} alt="" />
+                  {data.imagenColegio && <Image height={135} style={{ margin: 12 }} src={data.imagenColegio} alt="" />}
+                  {data.ImagenLogo && <Image height={135} style={{ margin: 12 }} src={data.ImagenLogo} alt="" />}
                 </center>
               </Col>
               <div style={{ marginTop: 50 }}>
