@@ -20,9 +20,9 @@ export default class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: -33.4367233,
-      lng: -70.6524783,
-      zoom: 8,
+      lat: -36.808826,
+      lng: -73.048497,
+      zoom: 4,
       types: [icon1, icon2, icon3, icon4, icon5, icon6],
       tasa: '',
       sector: '',
@@ -42,6 +42,7 @@ export default class Map extends Component {
         if (tasa.value === 0) return data.tasaTitulacion <= 0.6;
         else if (tasa.value === 1) return data.tasaTitulacion > 0.6 && data.tasaTitulacion < 0.8;
         else if (tasa.value === 2) return data.tasaTitulacion >= 0.8;
+        else if (tasa.value === 3) return data.tasaTitulacion === null;
         else return true;
       });
     } if (sector.length > 0) {

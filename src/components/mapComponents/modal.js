@@ -45,6 +45,7 @@ export default class Template extends Component {
 
   render() {
     const { data } = this.props;
+    console.log(data);
     const { hoverConsejo, hoverVinculo, logo, hoverIzquierda, hoverDerecha, imgEmpresa } = this.state;
     const settings = {
       dots: false,

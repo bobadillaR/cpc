@@ -60,27 +60,10 @@
   },
   {
     "featureType": "administrative.province",
-    "stylers": [
-      {
-        "color": "#b9b9a5"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.province",
     "elementType": "geometry",
     "stylers": [
       {
         "color": "#b9b9a5"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.province",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "weight": 2
       }
     ]
   },
