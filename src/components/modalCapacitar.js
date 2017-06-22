@@ -56,7 +56,7 @@ export default class ModalCapacitar extends Component {
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <p><a role="presentation" onClick={() => window.open(sintesis)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Síntesis del Seminario</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <Link to="/images">
+              <Link to="/images" target="_blank">
                 <p onClick={this.props.modalClick}><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
               </Link>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />

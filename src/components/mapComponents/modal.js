@@ -72,7 +72,7 @@ export default class Template extends Component {
             <p style={{ fontStyle: 'italic', fontSize: 14, padding: '5px 10px 0px 5px', marginBottom: 0 }}>{data.direccion}, {data.comuna}</p>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ marginLeft: 15, marginRight: 15, paddingTop: 40 }}>
+        <Modal.Body style={{ marginLeft: 15, marginRight: 15, paddingTop: 10 }}>
           <Slider {...settings} ref={c => (this.slider = c)} >
             <div style={{ paddingLeft: 30, paddingRight: 20 }}>
               <Col xs={12} style={{ marginBottom: 20 }}>
@@ -86,14 +86,14 @@ export default class Template extends Component {
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>NÚMERO DE MATRICULADOS 2016</p>
                   <p style={{ lineHeight: 1 }}>{data.matriculados}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>SECTORES ECONÓMICOS</p>
-                  <p style={{ lineHeight: 1 }}>{data.sectorEconomico.split(',').map(string => `${string}, `)}</p>
+                  <p style={{ lineHeight: 1 }}>{data.sectorEconomico.split(',').map((string, key) => { if (key === data.sectorEconomico.lenght) return string; else return `${string}, `; })}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>ESPECIALIDADES</p>
                   <p style={{ lineHeight: 1 }}>{data.especialidades}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>DEPENDENCIA</p>
                   <p style={{ lineHeight: 1 }}>{data.dependencia}</p>
                 </Col>
                 <Col md={5} xs={12} >
-                  <img src={logo[data.IDGremio]} alt="" style={{ height: 55, marginLeft: 15 }} />
+                  <img src={logo[data.IDGremio]} alt="" style={{ height: data.IDGremio < 2 ? 35 : 55, marginLeft: 15 }} />
                   <div style={{ backgroundColor: 'rgb(237, 237, 241)', margin: '15px 10px 10px', padding: 5 }}>
                     {data.mail !== '' && data.mail.includes('http') ?
                       <a rel="noopener noreferrer" href={data.mail} target="_blank">
@@ -116,7 +116,7 @@ export default class Template extends Component {
             </div>
             {data.empresas !== '' &&
               <div style={{ paddingLeft: 10, paddingRight: 10 }}>
-                <p style={{ color: 'rgb(65, 81, 97)', fontStyle: 'italic', fontSize: 12 }}>
+                <p style={{ color: 'rgb(65, 81, 97)', fontStyle: 'italic', fontSize: 14, marginTop: 0 }}>
                   Las siguientes empresas apoyan a este establecimiento para  su funcionamiento. El apoyo varía según cada liceo en aspectos como prácticas
                   profesionales, programas de formación dual, charlas formativas, maquinarias y materiales, entre otros.
                 </p>
@@ -149,7 +149,7 @@ export default class Template extends Component {
                 <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
                   <img alt="dada" src={imgTitulacion} style={{ height: 45 }} />
                   <p style={{ fontSize: 36, color: 'rgb(98, 97, 131)', marginLeft: 5 }} >
-                    {(data.tasaTitulacion * 100).toFixed(1)} %
+                    {(data.tasaTitulacion * 100).toFixed(0)} %
                   </p>
                 </div>
               </div>
