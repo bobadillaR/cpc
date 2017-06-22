@@ -27,7 +27,7 @@ export default class TableView extends Component {
     return (
       <Col xs={12} md={3} mdPull={1} style={width > 993 ? style1 : style2}>
         <h4 style={{ paddingLeft: 15 }}>CENTROS EDUCACIONALES</h4>
-        <div style={{ overflowY: 'scroll', overfloxX: 'hidden', maxHeight: height - 146 - 160 - 30 }}>
+        <div style={{ overflowY: 'scroll', overflowX: 'hidden', maxHeight: height - 146 - 160 - 30 }}>
           {mapData.length > 0 ?
             mapData.map((element, key) =>
               (<div
@@ -41,6 +41,7 @@ export default class TableView extends Component {
                 </Col>
                 <Col xs={6}>
                   <p style={{ fontWeight: 'bold', marginTop: 5 }}>{element.nombre}</p>
+                  <p>{element.direccion}</p>
                 </Col>
                 <Col xs={4}>
                   <img alt="logo" src={element.ImagenLogo} style={{ height: 60 }} />

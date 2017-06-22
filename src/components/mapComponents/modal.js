@@ -80,23 +80,17 @@ export default class Template extends Component {
           <Slider {...settings} ref={c => (this.slider = c)} >
             <div style={{ paddingLeft: 30, paddingRight: 20 }}>
               <Col xs={12} style={{ marginBottom: 20 }}>
-                <Col xs={12} md={6}>
-                  <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
-                    <Image height={150} src={data.imagenColegio} alt="" />
-                  </center>
-                </Col>
-                <Col xs={12} md={6}>
-                  <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
-                    <Image height={150} src={data.ImagenLogo} alt="" />
-                  </center>
-                </Col>
+                <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
+                  <Image height={135} style={{ margin: 12 }} src={data.imagenColegio} alt="" />
+                  <Image height={135} style={{ margin: 12 }} src={data.ImagenLogo} alt="" />
+                </center>
               </Col>
               <div style={{ marginTop: 50 }}>
                 <Col md={7} xs={12} style={{ borderColor: 'rgb(208, 208, 213)', borderRightWidth: 0.5, borderRightStyle: 'solid', borderLeftWidth: 0.5, borderLeftStyle: 'solid' }}>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>NÚMERO DE MATRICULADOS 2016</p>
                   <p style={{ lineHeight: 1 }}>{data.matriculados}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>SECTORES ECONÓMICOS</p>
-                  <p style={{ lineHeight: 1 }}>{data.sectoresEconomicos}</p>
+                  <p style={{ lineHeight: 1 }}>{data.sectorEconomico.split(',').map(string => `${string}, `)}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>ESPECIALIDADES</p>
                   <p style={{ lineHeight: 1 }}>{data.especialidades}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>DEPENDENCIA</p>
@@ -152,7 +146,7 @@ export default class Template extends Component {
             <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
               <img alt="dada" src={imgTitulacion} style={{ height: 45 }} />
               <p style={{ fontSize: 36, color: 'rgb(98, 97, 131)', marginLeft: 5 }} >
-                {data.tasaTitulacion}
+                {(data.tasaTitulacion * 100).toFixed(1)} %
               </p>
             </div>
           </Col>

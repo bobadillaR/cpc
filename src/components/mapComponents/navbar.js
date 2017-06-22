@@ -42,28 +42,28 @@ export default class Navbar extends Component {
     const { sector, tasa } = this.props;
     return (
       <div>
-        <Col className="animated fadeInDown" xs={12} md={10} mdOffset={1} style={{ position: 'fixed', top: 80, backgroundColor: '#454561', paddingTop: 4, paddingBottom: 4 }}>
-          <Col md={4} mdOffset={1}>
-            <Col xs={10}>
+        <Col className="animated fadeInDown" xs={12} md={10} mdPull={1} style={{ position: 'fixed', top: 80, backgroundColor: '#454561', paddingTop: 4, paddingBottom: 4 }}>
+          <Col md={4} mdOffset={1} style={{ padding: 2 }}>
+            <Col xs={10} style={{ paddingLeft: 0, paddingRight: 0 }}>
               <Select value={sector} placeholder="Sector Económico" options={sectorLabeL} multi onChange={a => this.props.changeSector(a)} />
             </Col>
-            <Col xs={2}>
+            <Col xs={2} style={{ paddingLeft: 0, paddingRight: 0 }}>
               <img src={imgSector} style={{ height: 32, margintop: 5 }} alt="lala" />
             </Col>
           </Col>
-          <Col md={3}>
-            <Col xs={10}>
+          <Col md={3} style={{ padding: 2 }}>
+            <Col xs={10} style={{ paddingLeft: 0, paddingRight: 0 }}>
               <Select value={tasa} placeholder="Tasa de Titulación" options={tasaLabel} onChange={this.props.changeTasa} />
             </Col>
-            <Col xs={2}>
+            <Col xs={2} style={{ paddingLeft: 0, paddingRight: 0 }}>
               <img src={imgTasa} style={{ height: 32, margintop: 5 }} alt="lala" />
             </Col>
           </Col>
-          <Col md={4}>
-            <Col xs={10}>
-              <SearchBox placeholder="Provincia, Ciudad, Region o nombre de liceo" onPlacesChanged={this.props.searchbox} />
+          <Col md={4} style={{ padding: 2 }}>
+            <Col xs={10} style={{ paddingLeft: 0, paddingRight: 0 }}>
+              <SearchBox placeholder="Provincia, Ciudad, Región o nombre de liceo" onPlacesChanged={this.props.searchbox} />
             </Col>
-            <Col xs={2}>
+            <Col xs={2} style={{ paddingLeft: 0, paddingRight: 0 }}>
               <img src={imgSearch} style={{ height: 32, margintop: 5 }} alt="lala" />
             </Col>
           </Col>
