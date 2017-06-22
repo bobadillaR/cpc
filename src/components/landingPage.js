@@ -61,7 +61,6 @@ export default class LandingPage extends Component {
           <Col md={3} style={{ paddingTop: '5%', padding: '0 !important' }}>
             <div>
               {activeTrans && <center className={'animated slideInLeft'}>
-                <Image responsive src={imgIzq} style={{ height: 130 }} alt="der" onMouseEnter={() => this.setState({ hover: true })} />
                 {hover &&
                   <div className={'animated fadeInLeftSmall'} style={{ bottom: '37%', paddingLeft: 20, zIndex: 50, left: '55%', position: 'absolute', textAlign: 'left', display: 'inline-block' }}>
                     <div role="presentation" onClick={this.props.modalClick1} style={{ position: 'relative', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'white', fontStyle: 'italic' }}>
@@ -82,10 +81,11 @@ export default class LandingPage extends Component {
                     </div>
                   </div>
                 }
-                <h4 style={{ marginTop: 20, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Iniciativas del Sector Privado</h4>
+                <Image responsive src={imgIzq} style={{ height: 130 }} alt="der" onMouseEnter={() => this.setState({ hover: true })} />
+                <h4 style={{ marginTop: 19, minHeight: 30, color: 'rgb(250, 250, 251)' }}>Iniciativas del Sector Privado</h4>
                 <Image src={imgInfo} style={{ height: 40, cursor: 'pointer' }} alt="der" onClick={() => this.setState({ openDer: !this.state.openDer })} />
                 <Collapse in={this.state.openDer}>
-                  <div style={{ marginTop: 5, color: 'rgb(234, 232, 230)', fontStyle: 'italic', lineHeight: 1, fontWeight: 100 }}>
+                  <div style={{ marginTop: 5, color: 'rgb(234, 232, 230)', fontStyle: 'italic', lineHeight: 1, fontWeight: 100, position: 'absolute' }}>
                     En esta sección encontrarás información sobre iniciativas que se desarrollan desde el sector privado para mejorar la formación de capital humano.
                   </div>
                 </Collapse>
