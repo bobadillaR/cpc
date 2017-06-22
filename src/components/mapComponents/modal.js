@@ -141,15 +141,19 @@ export default class Template extends Component {
         <Image src={imgSeparator} responsive />
         <Modal.Footer>
           <Col md={3} style={{ paddingLeft: 20, paddingRight: 0 }}>
-            <p style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 0, textAlign: 'center', color: 'rgb(98, 97, 131)', justifyContent: 'center' }}>
-              Tasa de Titulación 2016
-            </p>
-            <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
-              <img alt="dada" src={imgTitulacion} style={{ height: 45 }} />
-              <p style={{ fontSize: 36, color: 'rgb(98, 97, 131)', marginLeft: 5 }} >
-                {(data.tasaTitulacion * 100).toFixed(1)} %
-              </p>
-            </div>
+            {data.tasaTitulacion &&
+              <div>
+                <p style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 0, textAlign: 'center', color: 'rgb(98, 97, 131)', justifyContent: 'center' }}>
+                  Tasa de Titulación 2016
+                </p>
+                <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center' }}>
+                  <img alt="dada" src={imgTitulacion} style={{ height: 45 }} />
+                  <p style={{ fontSize: 36, color: 'rgb(98, 97, 131)', marginLeft: 5 }} >
+                    {(data.tasaTitulacion * 100).toFixed(1)} %
+                  </p>
+                </div>
+              </div>
+            }
           </Col>
           <Col md={9} >
             <Col md={4} style={{ flexDirection: 'row', display: 'flex', paddingLeft: 30, padding: 0 }} >
