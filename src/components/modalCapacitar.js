@@ -9,7 +9,7 @@ import noticias from './media/noticias.2a39182d.png';
 import empresasFormacion from './media/3.2 Empresas participantes.208eb3e7.jpg';
 import descripcion from './media/Descripción Evento.a27089b7.pdf';
 import sintesis from './media/Sintesis seminario.c9ce3b30.jpg';
-import boletin1 from './media/Boletin 1.08a2e6af.pdf';
+import boletin1 from './media/Boletin 1.pdf';
 import boletin2 from './media/Boletin 2.a53f460b.pdf';
 
 export default class ModalCapacitar extends Component {
