@@ -10,7 +10,6 @@ import imgConsejo from '../media/consejo.52ae89f3.png';
 import imgConsejoHover from '../media/consejoHover.0cffe2e7.png';
 import imgVinculoHover from '../media/vinculosHover.10d83ecf.png';
 import imgSofofa from '../media/oticSofofa.e66f03d7.jpg';
-import imgSna from '../media/sna-logo.jpg';
 // import imgCCHC from '../media/cchc-modal.png';
 import imgComeduc from '../media/comeduc-logo.jpg';
 import imgAsimet from '../media/asimet-logo.png';
@@ -35,7 +34,7 @@ export default class Template extends Component {
     this.state = {
       hoverVinculo: false,
       hoverConsejo: false,
-      logo: [imgSofofa, imgCoreduc, imgSna, imgAsimet, imgComeduc],
+      logo: [imgSofofa, 'http://www.ralempresas.cl/images/coreduc.jpg', 'http://www.oitcinterfor.org/sites/default/files/img_entidad/SNA%20educa%20tz.jpg', imgAsimet, imgComeduc],
       imgEmpresa: [imgOTICEmpresa2, imgOTICEmpresa1, imgSNAEmpresa, imgAsimetEmpresa, imgAsimetEmpresa],
       imgSpecific: [imgRafeal, imgVictor],
       hoverDerecha: false,
@@ -59,10 +58,10 @@ export default class Template extends Component {
       prevArrow: data.empresas !== '' && <Image src={hoverIzquierda ? flechaIzquierdaHover : flechaIzquierda} onMouseEnter={() => this.setState({ hoverIzquierda: true })} onMouseLeave={() => this.setState({ hoverIzquierda: false })} />,
     };
     const popoverHoverFocus = (
-      <Popover id="popover-trigger-click-root-close" title="RESULTADOS 2015">
-        <p>Matemáticas: {data.simceMatematicas}</p>
-        <p>Lenguaje: {data.simceLenguaje}</p>
-        <p>Historia: {data.simceHistoria}</p>
+      <Popover id="popover-trigger-click-root-close" title="Resultados 2015">
+        <p style={{ lineHeight: 1, marginBottom: 2 }}>Matemáticas: {data.simceMatematicas}</p>
+        <p style={{ lineHeight: 1, marginBottom: 2 }}>Lenguaje: {data.simceLenguaje}</p>
+        <p style={{ lineHeight: 1, marginBottom: 2 }}>Historia: {data.simceHistoria}</p>
       </Popover>
     );
     const popoverHoverConsejo = (
@@ -97,15 +96,20 @@ export default class Template extends Component {
                   <p style={{ lineHeight: 1 }}>{data.dependencia}</p>
                 </Col>
                 <Col md={5} xs={12} >
-                  <img src={logo[data.IDGremio]} alt="" style={{ height: 35, marginLeft: 15 }} />
+                  <img src={logo[data.IDGremio]} alt="" style={{ height: 55, marginLeft: 15 }} />
                   <div style={{ backgroundColor: 'rgb(237, 237, 241)', margin: '15px 10px 10px', padding: 5 }}>
-                    {data.web !== '' &&
-                      <a rel="noopener noreferrer" href={data.web} target="_blank">
+                    {data.mail !== '' && data.mail.includes('http') ?
+                      <a rel="noopener noreferrer" href={data.mail} target="_blank">
                         <p style={{ lineHeight: 1, color: 'rgb(44, 62, 80)', cursor: 'pointer', fontWeight: 'bold' }}>Contacto</p>
                       </a>
+                      :
+                      <div>
+                        <p style={{ lineHeight: 1, color: 'rgb(44, 62, 80)', cursor: 'pointer', fontWeight: 'bold' }}>Contacto</p>
+                        <p style={{ lineHeight: 1 }}>{data.mail}</p>
+                      </div>
                     }
-                    {data.mail !== '' &&
-                      <a rel="noopener noreferrer" href={data.mail} target="_blank">
+                    {data.web !== '' &&
+                      <a rel="noopener noreferrer" href={data.web} target="_blank">
                         <p style={{ lineHeight: 1, color: 'rgb(44, 62, 80)', cursor: 'pointer', fontWeight: 'bold' }}>Página Web</p>
                       </a>
                     }
@@ -151,16 +155,22 @@ export default class Template extends Component {
             </div>
           </Col>
           <Col md={9} >
-            <Col md={4} style={{ flexDirection: 'row', display: 'flex', padding: 0 }} >
+            <Col md={4} style={{ flexDirection: 'row', display: 'flex', paddingLeft: 30, padding: 0 }} >
               <OverlayTrigger trigger={['hover', 'focus']} placement="top" overlay={popoverHoverFocus}>
-                <img src={imgSimce} height={85} alt="dada" />
+                <img src={imgSimce} height={78} alt="dada" />
               </OverlayTrigger>
               <p style={{ color: 'rgb(44, 62, 80)', lineHeight: 1, marginTop: 23, textAlign: 'left' }}>Resultados Simce</p>
             </Col>
             {data.empresas !== '' &&
-              <Col onClick={() => this.slider.slickGoTo(1)} md={4} style={{ flexDirection: 'row', display: 'flex', padding: 0, cursor: 'pointer' }} onMouseEnter={() => this.setState({ hoverVinculo: true })} onMouseLeave={() => this.setState({ hoverVinculo: false })} >
+              <Col
+                md={4}
+                onClick={() => this.slider.slickGoTo(1)}
+                style={{ flexDirection: 'row', display: 'flex', cursor: 'pointer', padding: 0 }}
+                onMouseEnter={() => this.setState({ hoverVinculo: true })}
+                onMouseLeave={() => this.setState({ hoverVinculo: false })}
+              >
                 <img src={!hoverVinculo ? imgVinculo : imgVinculoHover} height={85} alt="dada" style={{ cursor: 'pointer' }} />
-                <p style={{ color: 'rgb(44, 62, 80)', lineHeight: 1, marginTop: 23, textAlign: 'left' }}>Vinculo Empresarial</p>
+                <p style={{ color: 'rgb(44, 62, 80)', lineHeight: 1, marginTop: 23, textAlign: 'left' }}>Vínculo Empresarial</p>
               </Col>
             }
             {data.consejo !== '' && data.consejo.includes('http') ?
@@ -171,7 +181,7 @@ export default class Template extends Component {
                 </a>
               </Col>
             :
-              <Col md={4} onMouseEnter={() => this.setState({ hoverConsejo: true })} onMouseLeave={() => this.setState({ hoverConsejo: false })} >
+              <Col md={4} style={{ flexDirection: 'row', display: 'flex', padding: 0 }} onMouseEnter={() => this.setState({ hoverConsejo: true })} onMouseLeave={() => this.setState({ hoverConsejo: false })} >
                 <OverlayTrigger trigger={['hover', 'focus']} placement="top" overlay={popoverHoverConsejo}>
                   <div style={{ flexDirection: 'row', display: 'flex', padding: 0 }}>
                     <img src={!hoverConsejo ? imgConsejo : imgConsejoHover} height={85} alt="dada" style={{ cursor: 'pointer' }} />
