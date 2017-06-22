@@ -44,25 +44,25 @@ export default class ModalCapacitar extends Component {
             <Col xs={6} md={3}>
               <Image src={empresas} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>EMPRESAS PARTICIPANTES</p>
-              <p><a role="link" tabIndex={0} onClick={() => window.open(empresasFormacion)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Empresas</a></p>
+              <p><a role="presentation" onClick={() => window.open(empresasFormacion)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Empresas</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
               <Image src={seminario} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>SEMINARIO</p>
-              <p><a role="link" tabIndex={0} onClick={() => window.open(descripcion)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Descripción Evento</a></p>
+              <p><a role="presentation" onClick={() => window.open(descripcion)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Descripción Evento</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a role="link" tabIndex={0} onClick={() => window.open(sintesis)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Síntesis del Seminario</a></p>
+              <p><a role="presentation" onClick={() => window.open(sintesis)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Síntesis del Seminario</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a role="link" tabIndex={0} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
+              <p><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
               <Image src={noticias} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>BOLETINES</p>
-              <p><a role="link" tabIndex={0} onClick={() => window.open(boletin1)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Boletín 1</a></p>
+              <p><a role="presentation" onClick={() => window.open(boletin1)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Boletín 1</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a role="link" tabIndex={0} onClick={() => window.open(boletin2)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Boletín 2</a></p>
+              <p><a role="presentation" onClick={() => window.open(boletin2)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Boletín 2</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
           </Row>

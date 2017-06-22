@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Col, Row, Image, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Modal, Col, Row, Image, OverlayTrigger, Popover } from 'react-bootstrap';
 import plan from './media/plan.82bc9831.png';
 import reporte from './media/reporte.0b0787ce.png';
 import talleres from './media/talleres.a1977bd3.png';
@@ -17,8 +17,10 @@ export default class ModalFortaleciendo extends Component {
 
   render() {
     const { show } = this.props;
-    const tooltip = (
-      <Tooltip id="tooltip"><strong>En proceso...</strong></Tooltip>
+    const popoverTop = (
+      <Popover id="popover-positioned-top" >
+        En proceso...
+      </Popover>
     );
     return (
       <Modal show={show} onHide={this.props.modalClick} bsSize="lg" >
@@ -48,17 +50,17 @@ export default class ModalFortaleciendo extends Component {
             <Col xs={6} md={3}>
               <Image src={talleres} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>TALLERES DE VALIDACION</p>
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a role="link" tabIndex={0} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Talleres Nacionales</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Talleres Nacionales</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a role="link" tabIndex={0} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Talleres Regionales</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Talleres Regionales</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
               <Image src={noticias} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>TALLERES DE VALIDACION</p>
-              <p><a role="link" tabIndex={0} onClick={() => window.open(titular)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Titular</a></p>
+              <p><a role="presentation" onClick={() => window.open(titular)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Titular</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a role="link" tabIndex={0} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>En la prensa</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>En la prensa</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
           </Row>

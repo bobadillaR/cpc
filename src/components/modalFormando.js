@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Col, Row, Image, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Modal, Col, Row, Image, Popover, OverlayTrigger } from 'react-bootstrap';
 import roles from './media/roles.57e04173.png';
 import estudios from './media/estudios.0a1a62e4.png';
 import marcos from './media/marcos.e7dc0f36.png';
@@ -20,11 +20,12 @@ export default class ModalFormando extends Component {
     };
   }
 
-
   render() {
     const { show } = this.props;
-    const tooltip = (
-      <Tooltip id="tooltip"><strong>En proceso...</strong></Tooltip>
+    const popoverTop = (
+      <Popover id="popover-positioned-top" >
+        En proceso...
+      </Popover>
     );
     return (
       <Modal show={show} onHide={this.props.modalClick} bsSize="lg" >
@@ -45,11 +46,11 @@ export default class ModalFormando extends Component {
             <Col xs={6} md={3}>
               <Image src={roles} alt="242x200" />
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>ROL DE LOS SECTORES PRODUCTIVOS</p>
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Informe Final</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Informe Final</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a role="link" tabIndex={0} onClick={() => window.open(resumen)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Presentación Resumen</a></p>
+              <p><a role="presentation" onClick={() => window.open(resumen)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Presentación Resumen</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Infografía resultados informe</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Infografía resultados informe</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
@@ -59,11 +60,11 @@ export default class ModalFormando extends Component {
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <p><a target="blank" href="http://www.corma.cl/_file/material/estudio-fuerza-laboral-de-la-industria-forestal-chilena-2015-2030_-diagnostico-y-recomendaciones.pdf" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Forestal</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Acuícola</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Acuícola</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Vitivinícola</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Vitivinícola</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <OverlayTrigger placement="top" overlay={tooltip}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Comercio</a></p></OverlayTrigger>
+              <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Sector Comercio</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
@@ -71,15 +72,15 @@ export default class ModalFormando extends Component {
               <p style={{ lineHeight: 1, fontSize: 16, fontFamily: 'Lato', color: 'rgb(131, 191, 39)', height: 40, marginTop: 10 }}>MARCOS DE CUALIFICACIONES</p>
               <p style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', fontSize: 14 }}>Consejo de Competencias Minero</p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p style={{ display: 'flex', alignItems: 'baseline' }}> 1. <a tabIndex={0} role="link" onClick={() => window.open(introduccion)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Introducción</a></p>
+              <p style={{ display: 'flex', alignItems: 'baseline' }}> 1. <a role="presentation" onClick={() => window.open(introduccion)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Introducción</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p style={{ display: 'flex', alignItems: 'baseline' }}> 2. <a tabIndex={0} role="link" onClick={() => window.open(extraccion)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Procesos de Extracción</a></p>
+              <p style={{ display: 'flex', alignItems: 'baseline' }}> 2. <a role="presentation" onClick={() => window.open(extraccion)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Procesos de Extracción</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p style={{ display: 'flex', alignItems: 'baseline' }}> 3. <a tabIndex={0} role="link" onClick={() => window.open(procesamiento)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Procesamiento de cobre, oro y plata</a></p>
+              <p style={{ display: 'flex', alignItems: 'baseline' }}> 3. <a role="presentation" onClick={() => window.open(procesamiento)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Procesamiento de cobre, oro y plata</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p style={{ display: 'flex', alignItems: 'baseline' }}> 4. <a tabIndex={0} role="link" onClick={() => window.open(mantenimiento)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Proceso de Mantenimiento</a></p>
+              <p style={{ display: 'flex', alignItems: 'baseline' }}> 4. <a role="presentation" onClick={() => window.open(mantenimiento)} style={{ paddingLeft: 3, lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}> Proceso de Mantenimiento</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a tabIndex={0} role="link" onClick={() => window.open(marco)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>ChileValora</a></p>
+              <p><a role="presentation" onClick={() => window.open(marco)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>ChileValora</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
