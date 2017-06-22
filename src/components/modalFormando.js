@@ -52,6 +52,8 @@ export default class ModalFormando extends Component {
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <OverlayTrigger placement="top" overlay={popoverTop}><p><a style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Infografía resultados informe</a></p></OverlayTrigger>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
+              <p style={{ marginBottom: 0 }}><a target="blank" href="http://www.chilevalora.cl/noticias/cuenta-publica-2016/" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>ChileValora</a></p>
+              <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
               <Image src={estudios} alt="242x200" />
