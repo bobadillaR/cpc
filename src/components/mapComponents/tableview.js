@@ -50,7 +50,7 @@ export default class TableView extends Component {
             :
             <div>
               <hr />
-              <p>Lo lamentamos pero no hay liceos para la zona indicada</p>
+              <p>Tu búsqueda no ha entregado resultados.</p>
             </div>
           }
         </div>

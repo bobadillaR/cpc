@@ -73,12 +73,12 @@ export default class Template extends Component {
         <Modal.Header closeButton style={{ paddingLeft: 20, paddingRight: 20 }}>
           <Modal.Title style={{ alignItems: 'baseline', justifyContent: 'space-between', display: 'flex', flexDirection: 'row', paddingBottom: 0, textAlign: 'center' }}>
             <h4>{data.nombre.toUpperCase()}</h4>
-            <p style={{ fontStyle: 'italic', fontSize: 14, padding: '5px 10px 5px 5px', marginBottom: 0 }}>{data.direccion}, {data.comuna}</p>
+            <p style={{ fontStyle: 'italic', fontSize: 14, padding: '5px 10px 0px 5px', marginBottom: 0 }}>{data.direccion}, {data.comuna}</p>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ marginLeft: 15, marginRight: 15, paddingTop: 5 }}>
+        <Modal.Body style={{ marginLeft: 15, marginRight: 15, paddingTop: 40 }}>
           <Slider {...settings} ref={c => (this.slider = c)} >
-            <div style={{ paddingLeft: 10, paddingRight: 10 }}>
+            <div style={{ paddingLeft: 30, paddingRight: 20 }}>
               <Col xs={12} style={{ marginBottom: 20 }}>
                 <Col xs={12} md={6}>
                   <center style={{ display: 'flex', justifyContent: 'center', height: 150 }}>
@@ -92,7 +92,7 @@ export default class Template extends Component {
                 </Col>
               </Col>
               <div style={{ marginTop: 50 }}>
-                <Col md={7} xs={12} style={{ borderColor: 'rgb(208, 208, 213)', borderrightwidth: 0.5, borderRightStyle: 'solid' }}>
+                <Col md={7} xs={12} style={{ borderColor: 'rgb(208, 208, 213)', borderRightWidth: 0.5, borderRightStyle: 'solid', borderLeftWidth: 0.5, borderLeftStyle: 'solid' }}>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>NÚMERO DE MATRICULADOS 2016</p>
                   <p style={{ lineHeight: 1 }}>{data.matriculados}</p>
                   <p style={{ fontWeight: 'bold', marginBottom: 0 }}>SECTORES ECONÓMICOS</p>
