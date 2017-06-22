@@ -35,6 +35,7 @@ export default class TableView extends Component {
                 onMouseOver={() => this.setState({ hover: key })}
                 onMouseLeave={() => this.setState({ hover: -1 })}
                 onClick={() => this.props.onClick(key)}
+                role="presentation"
               >
                 <Col xs={2}>
                   <img key={element.id} alt="" src={types[element.tipo - 1]} style={{ height: 30 }} />

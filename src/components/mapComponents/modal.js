@@ -10,10 +10,8 @@ import imgConsejo from '../media/consejo.52ae89f3.png';
 import imgConsejoHover from '../media/consejoHover.0cffe2e7.png';
 import imgVinculoHover from '../media/vinculosHover.10d83ecf.png';
 import imgSofofa from '../media/oticSofofa.e66f03d7.jpg';
-// import imgCCHC from '../media/cchc-modal.png';
 import imgComeduc from '../media/comeduc-logo.jpg';
 import imgAsimet from '../media/asimet-logo.png';
-import imgCoreduc from '../media/coreduc-logo.png';
 import flechaIzquierda from '../media/flechaizq.png';
 import flechaDerecha from '../media/felchaderecha.png';
 import flechaIzquierdaHover from '../media/flechaizqhover.png';
@@ -44,7 +42,6 @@ export default class Template extends Component {
 
   render() {
     const { data } = this.props;
-    console.log(data);
     const { hoverConsejo, hoverVinculo, logo, hoverIzquierda, hoverDerecha, imgEmpresa } = this.state;
     const settings = {
       dots: false,

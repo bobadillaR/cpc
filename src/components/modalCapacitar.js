@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Col, Row, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 import informe from './media/hoja.png';
 import empresas from './media/empresas.14e1cbeb.png';
 import seminario from './media/seminario.5da35961.png';
@@ -54,7 +56,9 @@ export default class ModalCapacitar extends Component {
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
               <p><a role="presentation" onClick={() => window.open(sintesis)} style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Síntesis del Seminario</a></p>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
-              <p><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
+              <Link to="/images">
+                <p onClick={this.props.modalClick}><a role="presentation" style={{ lineHeight: 1, fontFamily: 'Helvetica Neue', color: 'rgb(71, 71, 97)', cursor: 'pointer', fontSize: 14 }}>Fotos</a></p>
+              </Link>
               <hr style={{ marginTop: 3, marginBottom: 3 }} />
             </Col>
             <Col xs={6} md={3}>
